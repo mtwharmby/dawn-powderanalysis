@@ -1,4 +1,4 @@
-package uk.ac.diamond.powder_toolkit.dataAnalysis;
+package uk.ac.diamond.scisoft.powder.dataAnalysis;
 
 import org.eclipse.dawnsci.plotting.api.IPlottingService;
 

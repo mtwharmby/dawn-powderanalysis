@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
 
-import uk.ac.diamond.powder_toolkit.dataAnalysis.ServiceLoader;
+import uk.ac.diamond.scisoft.powder.dataAnalysis.ServiceLoader;
 
 /**
  * Plot view is the plotting view used in the perspective, it allows easy

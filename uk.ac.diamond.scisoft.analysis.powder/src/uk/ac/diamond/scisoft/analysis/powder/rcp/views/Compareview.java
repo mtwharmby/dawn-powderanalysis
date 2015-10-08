@@ -30,11 +30,11 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.SWTResourceManager;
 
-import uk.ac.diamond.powder_toolkit.dataAnalysis.Comparator;
-import uk.ac.diamond.powder_toolkit.dataAnalysis.LoadedDataObject;
-import uk.ac.diamond.powder_toolkit.dataAnalysis.MyDataHolder;
 import uk.ac.diamond.powder_toolkit.jython_programs.CSD_cellsearch;
 import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.ErrorWidget;
+import uk.ac.diamond.scisoft.powder.dataAnalysis.Comparator;
+import uk.ac.diamond.scisoft.powder.dataAnalysis.LoadedDataObject;
+import uk.ac.diamond.scisoft.powder.dataAnalysis.MyDataHolder;
 
 /**
  * The comparison view of the perspective

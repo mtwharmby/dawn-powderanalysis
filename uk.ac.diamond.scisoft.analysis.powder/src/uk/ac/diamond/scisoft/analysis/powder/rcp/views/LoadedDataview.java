@@ -35,8 +35,8 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.SWTResourceManager;
 
-import uk.ac.diamond.powder_toolkit.dataAnalysis.LoadedDataObject;
-import uk.ac.diamond.powder_toolkit.dataAnalysis.MyDataHolder;
+import uk.ac.diamond.scisoft.powder.dataAnalysis.LoadedDataObject;
+import uk.ac.diamond.scisoft.powder.dataAnalysis.MyDataHolder;
 
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
