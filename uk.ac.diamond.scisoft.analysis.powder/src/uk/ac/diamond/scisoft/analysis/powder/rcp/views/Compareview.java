@@ -1,4 +1,4 @@
-package uk.ac.diamond.powder_toolkit.views;
+package uk.ac.diamond.scisoft.analysis.powder.rcp.views;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

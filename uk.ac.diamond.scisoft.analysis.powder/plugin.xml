@@ -13,27 +13,27 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            class="uk.ac.diamond.powder_toolkit.views.Loadview"
+            class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Loadview"
             id="uk.ac.diamond.powder_toolkit.views.Loadview"
             name="Load">
       </view>
       <view
-            class="uk.ac.diamond.powder_toolkit.views.Indexview"
+            class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Indexview"
             id="uk.ac.diamond.powder_toolkit.views.Indexview"
             name="Index">
       </view>
       <view
-            class="uk.ac.diamond.powder_toolkit.views.Compareview"
+            class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Compareview"
             id="uk.ac.diamond.powder_toolkit.views.Compareview"
             name="Compare">
       </view>
       <view
-            class="uk.ac.diamond.powder_toolkit.views.LoadedDataview"
+            class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.LoadedDataview"
             id="uk.ac.diamond.powder_toolkit.views.LoadedDataview"
             name="Loaded Data">
       </view>
       <view
-            class="uk.ac.diamond.powder_toolkit.views.Plotview"
+            class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Plotview"
             id="uk.ac.diamond.powder_toolkit.views.Plotview"
             name="PlotView">
       </view>
