@@ -31,7 +31,7 @@ import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 import uk.ac.diamond.powder_toolkit.dataAnalysis.Loader;
-import uk.ac.diamond.powder_toolkit.widgets.ErrorWidget;
+import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.ErrorWidget;
 
 /**
  * Load view is designed to make it easy for the user to load in many data types

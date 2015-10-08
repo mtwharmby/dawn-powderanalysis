@@ -34,7 +34,7 @@ import uk.ac.diamond.powder_toolkit.dataAnalysis.Comparator;
 import uk.ac.diamond.powder_toolkit.dataAnalysis.LoadedDataObject;
 import uk.ac.diamond.powder_toolkit.dataAnalysis.MyDataHolder;
 import uk.ac.diamond.powder_toolkit.jython_programs.CSD_cellsearch;
-import uk.ac.diamond.powder_toolkit.widgets.ErrorWidget;
+import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.ErrorWidget;
 
 /**
  * The comparison view of the perspective
