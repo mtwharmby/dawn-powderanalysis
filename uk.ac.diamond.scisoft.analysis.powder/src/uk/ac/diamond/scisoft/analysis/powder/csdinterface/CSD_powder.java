@@ -1,4 +1,4 @@
-package uk.ac.diamond.powder_toolkit.jython_programs;
+package uk.ac.diamond.scisoft.analysis.powder.csdinterface;
 
 import java.io.BufferedReader;
 import java.io.IOException;
