@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="uk.ac.diamond.powder_toolkit.perspective.PowderToolkit"
+            class="uk.ac.diamond.scisoft.analysis.powder.rcp.PowderToolkit"
             icon="icons/releng_gears.gif"
             id="uk.ac.diamond.powder_toolkit.PowderToolkit"
             name="Powder Toolkit">

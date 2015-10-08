@@ -1,4 +1,4 @@
-package uk.ac.diamond.powder_toolkit.perspective;
+package uk.ac.diamond.scisoft.analysis.powder.rcp;
 
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
