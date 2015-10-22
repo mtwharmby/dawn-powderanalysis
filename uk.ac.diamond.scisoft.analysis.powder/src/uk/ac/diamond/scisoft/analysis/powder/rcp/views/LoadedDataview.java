@@ -67,7 +67,7 @@ public class LoadedDataview extends ViewPart {
 	public void createPartControl(Composite parent) {
 		//Find plotting system we're working with
 		IWorkbenchPage page = getSite().getPage();
-		IViewPart view = page.findView("org.dawnsci.processing.ui.output");
+		IViewPart view = page.findView("uk.ac.diamond.scisoft.analysis.powder.ui.views.PDPlot");
 		pdPlot = (IPlottingSystem)view.getAdapter(IPlottingSystem.class);
 		
 		parent.setFont(SWTResourceManager.getFont("Sans", 12, SWT.NORMAL));
@@ -349,8 +349,7 @@ public class LoadedDataview extends ViewPart {
 			public void dragFinished(DragSourceEvent event) {
 				// If a move operation has been performed, remove the data
 				// from the source
-				if (event.detail == DND.DROP_MOVE)
-					;
+				if (event.detail == DND.DROP_MOVE);
 			}
 		});
 		createActions();
