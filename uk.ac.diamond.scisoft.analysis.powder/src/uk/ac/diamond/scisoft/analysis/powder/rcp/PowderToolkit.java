@@ -24,21 +24,21 @@ public class PowderToolkit implements IPerspectiveFactory {
 		{
 			IFolderLayout folderLayout = layout.createFolder("Powder folder",
 					IPageLayout.TOP, 0.84f, IPageLayout.ID_EDITOR_AREA);
-			folderLayout.addView("uk.ac.diamond.powder_toolkit.views.Loadview");
+			folderLayout.addView("uk.ac.diamond.scisoft.analysis.powder.rcp.views.Loadview");
 			folderLayout
 					.addView("org.dawb.workbench.plotting.views.toolPageView.1D");
 			folderLayout
-					.addView("uk.ac.diamond.powder_toolkit.views.Indexview");
+					.addView("uk.ac.diamond.scisoft.analysis.powder.rcp.views.Indexview");
 			folderLayout
-					.addView("uk.ac.diamond.powder_toolkit.views.Compareview");
+					.addView("uk.ac.diamond.scisoft.analysis.powder.rcp.views.Compareview");
 		}
 		{
 			IFolderLayout folderLayout = layout.createFolder("folder",
 					IPageLayout.RIGHT, 0.85f, "Powder folder");
 			folderLayout
-					.addView("uk.ac.diamond.powder_toolkit.views.LoadedDataview");
+					.addView("uk.ac.diamond.scisoft.analysis.powder.rcp.views.LoadedDataview");
 		}
-		layout.addView("uk.ac.diamond.powder_toolkit.views.Plotview",
+		layout.addView("uk.ac.diamond.scisoft.analysis.powder.rcp.views.Plotview",
 				IPageLayout.TOP, 0.38f, "Powder folder");
 	}
 
