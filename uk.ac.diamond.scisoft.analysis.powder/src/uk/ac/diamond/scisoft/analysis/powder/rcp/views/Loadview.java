@@ -2,13 +2,13 @@ package uk.ac.diamond.scisoft.analysis.powder.rcp.views;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.ws.Holder;
-
 import org.eclipse.dawnsci.analysis.api.dataset.IDataset;
+import org.eclipse.dawnsci.plotting.api.IPlottingSystem;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.TableEditor;
@@ -19,7 +19,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
@@ -27,6 +26,8 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.SWTResourceManager;
 
@@ -77,6 +78,7 @@ public class Loadview extends ViewPart {
 											// more then 2 columns being
 											// selected
 	private static List<IDataset> dataset;
+	private static IPlottingSystem pdPlot; //TODO Why are all the methods & variables static?! Change this
 
 	/**
 	 * Create contents of the view part.
@@ -85,6 +87,11 @@ public class Loadview extends ViewPart {
 	 */
 	@Override
 	public void createPartControl(final Composite parent) {
+		//Find plotting system we're working with
+		IWorkbenchPage page = getSite().getPage();
+		IViewPart view = page.findView("uk.ac.diamond.scisoft.analysis.powder.ui.views.PDPlot");
+		pdPlot = (IPlottingSystem)view.getAdapter(IPlottingSystem.class);
+				
 		final Composite composite = new Composite(parent, SWT.NONE);
 		final Shell shell = new Shell();
 		composite.setFont(SWTResourceManager.getFont("Sans", 12, SWT.NORMAL));
@@ -471,11 +478,20 @@ public class Loadview extends ViewPart {
 					if (data.isEmpty()) {
 						throw new Exception("Error loading data");
 					}
-
+					//TODO temporary variable for sampletext here and below
 					LoadedDataview.addData(sampletext.getText(), flag, data,
 							filepath);
+					
+					
+					
+
 					Indexview.setData(sampletext.getText());
-					Plotview.createMyplot(data);
+					
+					//Retrieve data - this is using a bit of ugly code... TODO
+					IDataset[] plotData = PDPlotUtils.getDataForPlot(data);
+					pdPlot.clear();
+					pdPlot.reset();
+					pdPlot.createPlot1D(plotData[0], Arrays.asList(plotData[1]), "New plot", null); //TODO Should use filename here, not New Plot.
 
 				}
 
