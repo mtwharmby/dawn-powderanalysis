@@ -6,7 +6,7 @@
       <perspective
             class="uk.ac.diamond.scisoft.analysis.powder.rcp.PowderToolkit"
             icon="icons/releng_gears.gif"
-            id="uk.ac.diamond.powder_toolkit.PowderToolkit"
+            id="uk.ac.diamond.scisoft.analysis.powder.rcp.PowderToolkit"
             name="Powder Toolkit">
       </perspective>
    </extension>
@@ -14,27 +14,27 @@
          point="org.eclipse.ui.views">
       <view
             class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Loadview"
-            id="uk.ac.diamond.powder_toolkit.views.Loadview"
+            id="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Loadview"
             name="Load">
       </view>
       <view
             class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Indexview"
-            id="uk.ac.diamond.powder_toolkit.views.Indexview"
+            id="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Indexview"
             name="Index">
       </view>
       <view
             class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Compareview"
-            id="uk.ac.diamond.powder_toolkit.views.Compareview"
+            id="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Compareview"
             name="Compare">
       </view>
       <view
             class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.LoadedDataview"
-            id="uk.ac.diamond.powder_toolkit.views.LoadedDataview"
+            id="uk.ac.diamond.scisoft.analysis.powder.rcp.views.LoadedDataview"
             name="Loaded Data">
       </view>
       <view
             class="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Plotview"
-            id="uk.ac.diamond.powder_toolkit.views.Plotview"
+            id="uk.ac.diamond.scisoft.analysis.powder.rcp.views.Plotview"
             name="PlotView">
       </view>
    </extension>
