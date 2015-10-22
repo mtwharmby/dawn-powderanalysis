@@ -1,8 +1,11 @@
 package uk.ac.diamond.scisoft.analysis.powder.rcp.views;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.eclipse.dawnsci.analysis.api.dataset.IDataset;
+import org.eclipse.dawnsci.plotting.api.IPlottingSystem;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.swt.SWT;
@@ -14,6 +17,8 @@ import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.DragDetectEvent;
 import org.eclipse.swt.events.DragDetectListener;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Point;
@@ -23,23 +28,18 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
+import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.LoadedDataObject;
 import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.MyDataHolder;
-
-import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.events.MouseListener;
 
 /**
  * LoadedDataView view to hold and share data with other views
@@ -53,6 +53,7 @@ public class LoadedDataview extends ViewPart {
 	public static MyDataHolder holder = new MyDataHolder(); // the data holder
 	private static Table datalist;
 	private static Table cellList;
+	private IPlottingSystem pdPlot;
 
 	public LoadedDataview() {
 	}
@@ -64,6 +65,11 @@ public class LoadedDataview extends ViewPart {
 	 */
 	@Override
 	public void createPartControl(Composite parent) {
+		//Find plotting system we're working with
+		IWorkbenchPage page = getSite().getPage();
+		IViewPart view = page.findView("org.dawnsci.processing.ui.output");
+		pdPlot = (IPlottingSystem)view.getAdapter(IPlottingSystem.class);
+		
 		parent.setFont(SWTResourceManager.getFont("Sans", 12, SWT.NORMAL));
 		FillLayout fl_parent = new FillLayout(SWT.HORIZONTAL);
 		fl_parent.spacing = 25;
@@ -194,10 +200,13 @@ public class LoadedDataview extends ViewPart {
 			@Override
 			public void mouseDoubleClick(MouseEvent arg0) {
 				String dataname = datalist.getSelection()[0].getText();
-				java.util.List<IDataset> mydata = holder.getData(dataname).data; // Retrieve
-																					// the
-																					// data
-				Plotview.createMyplot(mydata);
+				
+				//Retrieve data - this is using a bit of ugly code... TODO
+				IDataset[] plotData = PDPlotUtils.getDataForPlot(holder.getData(dataname).data);
+				pdPlot.clear();
+				pdPlot.reset();
+				pdPlot.createPlot1D(plotData[0], Arrays.asList(plotData[1]), "New plot", null); //TODO Should use filename here, not New Plot.
+
 				Indexview.setData(dataname);
 
 			}
@@ -227,8 +236,8 @@ public class LoadedDataview extends ViewPart {
 				for (int i = 0; i < 1; i++) {
 					Rectangle rect = item.getBounds(i);
 					if (rect.contains(pt)) {
-						java.util.List<Double> angles = new ArrayList<Double>();
-						java.util.List<Double> lengths = new ArrayList<Double>();
+						List<Double> angles = new ArrayList<Double>();
+						List<Double> lengths = new ArrayList<Double>();
 						String primitive = "";
 						for (int i1 = 0; i1 < 3; i1++) {
 							angles.add(holder.getData(item.getText()).data.get(
@@ -264,7 +273,7 @@ public class LoadedDataview extends ViewPart {
 			@Override
 			public void mouseDoubleClick(MouseEvent arg0) {
 				String dataname = cellList.getSelection()[0].getText();
-				java.util.List<IDataset> mydata = holder.getData(dataname).data; // Retrieve
+				List<IDataset> mydata = holder.getData(dataname).data; // Retrieve
 																					// the
 																					// data
 				Compareview.setsearchCell(mydata);
@@ -365,7 +374,7 @@ public class LoadedDataview extends ViewPart {
 	 *             same
 	 */
 	public static void addData(String name, String flag,
-			java.util.List<IDataset> data, String filepath) throws Exception {
+			List<IDataset> data, String filepath) throws Exception {
 		for (LoadedDataObject loads : holder.getDatalist()) {
 			if (loads.name.equals(name)) {
 				throw new Exception(
@@ -389,7 +398,7 @@ public class LoadedDataview extends ViewPart {
 	 * @throws Exception
 	 *             no two datasets may have the smae name
 	 */
-	public static void addCell(String name, java.util.List<IDataset> data)
+	public static void addCell(String name, List<IDataset> data)
 			throws Exception {
 		for (LoadedDataObject loads : holder.getDatalist()) {
 			if (loads.name.equals(name)) {
