@@ -19,7 +19,6 @@ Require-Bundle: org.eclipse.ui,
  org.dawb.common.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Import-Package: org.dawb.common.ui
 Bundle-ClassPath: .,
  swing2swt.jar,
  python_code/
