@@ -30,8 +30,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.Loader;
 import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.ErrorWidget;
-import uk.ac.diamond.scisoft.powder.dataAnalysis.Loader;
 
 /**
  * Load view is designed to make it easy for the user to load in many data types

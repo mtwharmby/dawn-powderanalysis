@@ -1,4 +1,4 @@
-package uk.ac.diamond.scisoft.powder.dataAnalysis;
+package uk.ac.diamond.scisoft.analysis.powder.dataAnalysis;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

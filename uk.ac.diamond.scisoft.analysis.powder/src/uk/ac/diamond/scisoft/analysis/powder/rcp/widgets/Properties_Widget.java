@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 
-import uk.ac.diamond.scisoft.powder.dataAnalysis.IPowderIndexer;
+import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.IPowderIndexer;
 
 /**
  * Creates properties widgets for the indexing view, that can be used to input

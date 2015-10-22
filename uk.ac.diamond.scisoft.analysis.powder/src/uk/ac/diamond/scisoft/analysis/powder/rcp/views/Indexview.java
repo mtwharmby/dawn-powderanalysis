@@ -37,12 +37,12 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
+import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.IPowderIndexer;
+import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.LoadedDataObject;
+import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.MyDataHolder;
+import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.Ntreor;
 import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.ErrorWidget;
 import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.Properties_Widget;
-import uk.ac.diamond.scisoft.powder.dataAnalysis.IPowderIndexer;
-import uk.ac.diamond.scisoft.powder.dataAnalysis.LoadedDataObject;
-import uk.ac.diamond.scisoft.powder.dataAnalysis.MyDataHolder;
-import uk.ac.diamond.scisoft.powder.dataAnalysis.Ntreor;
 
 import org.eclipse.swt.widgets.ProgressBar;
 import org.eclipse.swt.widgets.CoolBar;
