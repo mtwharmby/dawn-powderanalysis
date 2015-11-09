@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Powder_toolkit
-Bundle-SymbolicName: uk.ac.diamond.scisoft.analysis.powder;singleton:=true
+Bundle-SymbolicName: uk.ac.diamond.scisoft.analysis.powderold;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.Activator
 Require-Bundle: org.eclipse.ui,

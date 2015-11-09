@@ -2,22 +2,22 @@ import unittest
 
 from collections import namedtuple
 
+import uk.ac.diamond.scisoft.analysis.powder.csdinterface
+from uk.ac.diamond.scisoft.analysis.powder.csdinterface import csdFormatter
+
 class csdFormatterTestCase(unittest.TestCase):
-    import csdFormatter
     def setUp(self):
-        pass
+        self.cellAngleNamedTuple = namedtuple('CellAngles', [90, 105.6, 90])
+        self.cellAnglesValues = [90, 105.6, 90]
     
-class NamedTupleToListTestCase(csdFormatterTestCase):
-    self.cellAngles = namedtuple('CellAngles', [90, 105.6, 90])
-    
+class NamedTupleToListTestCase(csdFormatterTestCase):    
     def runTest(self):
-        self.deNamedTuple = csdFormatter.namedTuple2List(self.cellAngles)
+        self.deNamedTuple = csdFormatter.namedTuple2List(self.cellAngleNamedTuple)
         self.assertEqual(self.deNamedTuple, [90, 105.6, 90])
 
 class ListToNamedTuple(csdFormatterTestCase):
-    self.cellAngles = [90, 105.6, 90]
     
     def runTest(self):
-        self.caAsNamedTuple = csdFormatter.list2NamedTuple(self.cellAngles)
+        self.caAsNamedTuple = csdFormatter.list2NamedTuple(self.cellAnglesValues, name = "CellAngles", fieldNames = ["al", "be", "ga"])
         self.assertEqual(self.caAsNamedTuple, 'CellAngles', [90, 105.6, 90])
         

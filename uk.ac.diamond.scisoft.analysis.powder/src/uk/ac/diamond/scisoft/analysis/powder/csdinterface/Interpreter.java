@@ -21,7 +21,7 @@ public class Interpreter {
 
 		// interpreter.initialize(System.getProperties(),System.getProperties(),
 		// new String[0]);
-		this.interpreter = new PythonInterpreterWrapper();
+		interpreter = new PythonInterpreterWrapper();
 	}
 
 	/**
@@ -31,7 +31,7 @@ public class Interpreter {
 	 *            the filepath to the python file
 	 */
 	public void execfile(final String fileName) {
-		this.interpreter.execfile(fileName);
+		interpreter.execfile(fileName);
 	}
 
 	/**
@@ -44,7 +44,8 @@ public class Interpreter {
 	 * @return returns a jython class
 	 */
 	PyInstance createClass(final String className, final String opts) {
-		return (PyInstance) this.interpreter.eval(className + "(" + opts + ")");
+//		return (PyInstance) this.interpreter.eval(className + "(" + opts + ")");
+		return null;
 	}
 
 }
