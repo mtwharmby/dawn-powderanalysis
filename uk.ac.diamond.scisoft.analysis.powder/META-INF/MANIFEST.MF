@@ -16,10 +16,15 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jface,
  org.eclipse.dawnsci.plotting.api,
  org.eclipse.osgi.services,
- org.dawb.common.util
+ org.dawb.common.util,
+ org.junit;bundle-version="4.10.0",
+ org.dawnsci.python.rpc,
+ org.python.pydev.core;bundle-version="3.6.0",
+ uk.ac.diamond.scisoft.analysis.xmlrpc;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
  swing2swt.jar,
  python_code/
 Service-Component: OSGI-INF/*.xml
+Import-Package: org.slf4j;version="1.7.6"
