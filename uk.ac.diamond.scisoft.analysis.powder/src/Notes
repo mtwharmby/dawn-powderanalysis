@@ -1,0 +1,9 @@
+The following may or may not be desirable:
+
+Plugin dependencies
+--
+org.python.pydev.core
+
+Imported packages
+--
+uk.ac.diamond.scisoft.analysis.io
