@@ -29,9 +29,8 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.wb.swt.SWTResourceManager;
 
-import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.Loader;
+import uk.ac.diamond.scisoft.analysis.powder.dataanalysis.Loader;
 import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.ErrorWidget;
 
 /**

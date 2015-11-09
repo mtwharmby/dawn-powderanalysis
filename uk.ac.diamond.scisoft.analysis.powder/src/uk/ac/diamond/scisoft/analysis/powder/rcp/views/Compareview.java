@@ -28,12 +28,12 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.wb.swt.SWTResourceManager;
+//import org.eclipse.wb.swt.SWTResourceManager;
 
 import uk.ac.diamond.scisoft.analysis.powder.csdinterface.CSD_cellsearch;
-import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.Comparator;
-import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.LoadedDataObject;
-import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.MyDataHolder;
+import uk.ac.diamond.scisoft.analysis.powder.dataanalysis.Comparator;
+import uk.ac.diamond.scisoft.analysis.powder.dataanalysis.LoadedDataObject;
+import uk.ac.diamond.scisoft.analysis.powder.dataanalysis.MyDataHolder;
 import uk.ac.diamond.scisoft.analysis.powder.rcp.widgets.ErrorWidget;
 
 /**

@@ -36,10 +36,9 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.wb.swt.SWTResourceManager;
 
-import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.LoadedDataObject;
-import uk.ac.diamond.scisoft.analysis.powder.dataAnalysis.MyDataHolder;
+import uk.ac.diamond.scisoft.analysis.powder.dataanalysis.LoadedDataObject;
+import uk.ac.diamond.scisoft.analysis.powder.dataanalysis.MyDataHolder;
 
 /**
  * LoadedDataView view to hold and share data with other views

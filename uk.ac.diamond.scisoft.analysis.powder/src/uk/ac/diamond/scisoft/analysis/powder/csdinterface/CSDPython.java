@@ -24,8 +24,8 @@ public class CSDPython {
 		
 		//data should be in the form varName:value
 		
-		Map<String, Object> results = pythonScriptService.runScript(
-				"/scratch/ecl-ws/pxrdtk-ws_git/dawn-powderanalysis.git/uk.ac.diamond.scisoft.analysis.powder/src/uk/ac/diamond/scisoft/analysis/powder/csdinterface/CSD_cell_search.py", data);
+//		Map<String, Object> results = pythonScriptService.runScript(
+//				"/scratch/ecl-ws/pxrdtk-ws_git/dawn-powderanalysis.git/uk.ac.diamond.scisoft.analysis.powder/src/uk/ac/diamond/scisoft/analysis/powder/csdinterface/CSD_cell_search.py", data);
 		
 	}
 		
